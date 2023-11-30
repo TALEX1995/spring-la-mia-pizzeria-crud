@@ -1,10 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
 
+<head>
+	<meta charset="ISO-8859-1">
+	<!-- Bootstrap CSS -->
+	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css}" />
+	<title>Pizze</title>
+</head>
+
+<body>
+	<div class="container mt-5">
+		<div th:if="${pizzas.empty}">Non ci sono pizze</div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Name</th>
+					<th scope="col">Description</th>
+					<th scope="col">Price</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="pizza : ${pizzas}")>
+					<th th:text="${pizza.name}"></th>
+					<td th:text="${pizza.description}"></td>
+					<td th:text="${pizza.price} + €"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </body>
+
 </html>
