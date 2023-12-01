@@ -10,6 +10,14 @@
 
 <body>
 	<div class="container mt-5">
+		<form>
+			<div class="input-group mb-3 d-flex align-items-center">
+				<label for="search">Cerca in base al nome della tua pizza</label>
+				<input id="search" type="text" class="form-control mx-3" name="pizzaName"
+					aria-describedby="basic-addon1" placeholder="Inserisci il nome della pizza" th:value="${pizzaName}">
+				<input class="btn btn-primary" type="submit" value="SEARCH" > 	
+			</div>
+		</form>
 		<div th:if="${pizzas.empty}">Non ci sono pizze</div>
 		<table class="table">
 			<thead>
@@ -21,7 +29,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="pizza : ${pizzas}")>
+				<tr th:each="pizza : ${pizzas}" )>
 					<th th:text="${pizza.name}"></th>
 					<td th:text="${pizza.description}"></td>
 					<td th:text="${pizza.price} + €"></td>
