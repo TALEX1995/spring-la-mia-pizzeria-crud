@@ -19,6 +19,9 @@
 			</div>
 		</form>
 		<div th:if="${pizzas.empty}">Non ci sono pizze</div>
+		<div class="d-flex justify-content-end">
+			<td><a class="btn btn-primary" href="/pizzas/create">Aggiungi pizza</a></td>
+		</div>
 		<table class="table">
 			<thead>
 				<tr>
