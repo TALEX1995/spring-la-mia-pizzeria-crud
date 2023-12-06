@@ -30,5 +30,9 @@ public class PizzaService {
 		return pizzaRepository.findByNameContainingIgnoreCase(name);
 	}
 	
+	public void delete(Pizza pizza) {
+		
+		pizzaRepository.delete(pizza);
+	}
 	
 }
